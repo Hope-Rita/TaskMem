@@ -260,20 +260,14 @@ across clips.
 
 ## Training
 
-Training of the TaskMem episodic memorization policy is released as two
-separate repositories.
+The episodic memorization policy is trained in two stages, each in its own repo:
 
-| Stage | Repository | What it does |
-| --- | --- | --- |
-| **Phase One** | [Hope-Rita/TaskMem-PhaseOne](https://github.com/Hope-Rita/TaskMem-PhaseOne) | RL training of the base episodic policy on top of Qwen3-VL-30B-A3B-Thinking (verl + GSPO, multi-reward judge). |
-| **Phase Two** | [Hope-Rita/TaskMem-PhaseTwo](https://github.com/Hope-Rita/TaskMem-PhaseTwo) | DPO training of a lightweight **steer adapter** on preference pairs scored by the task-relevance reward model; produces the HuggingFace-format checkpoint consumed by `examples/run_taskmem.sh`. |
+- **Phase One (RL)** — [TaskMem-PhaseOne](https://github.com/Hope-Rita/TaskMem-PhaseOne)
+- **Phase Two (DPO, produces the steer adapter)** — [TaskMem-PhaseTwo](https://github.com/Hope-Rita/TaskMem-PhaseTwo)
 
-The `training/` directory in this repository contains the **data-preparation
-scripts** that produce the parquet/jsonl files those two training pipelines
-consume — they are not training loops themselves. The `modeling/` directory
-provides the adapter-aware HuggingFace + vLLM model classes shared between
-this inference framework and Phase Two; the vLLM version is registered as
-the `qwen3vllm_ada` plugin via `setup.py`.
+In this repo, `training/` holds the data-preparation scripts those two
+pipelines consume, and `modeling/` holds the adapter-aware Qwen3-VL classes
+registered as the `qwen3vllm_ada` vLLM plugin.
 
 ## Citation
 
