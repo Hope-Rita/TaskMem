@@ -249,12 +249,14 @@ env vars at a Python module to swap in a different stack:
 | --- | --- | --- |
 | `TASKMEM_FACE_BACKEND` | `tools.face_extraction` | `extract_faces(frames) -> list[dict]` |
 | `TASKMEM_FACE_CLUSTER_BACKEND` | `tools.face_clustering` | `cluster_faces(faces, min_cluster_size) -> list[dict]` |
-| `TASKMEM_AUDIO_EMBED_BACKEND` | *(disabled)* | `get_audio_embeddings(wav_b64_list) -> list[list[float]\|None]` |
 
-`TASKMEM_AUDIO_EMBED_BACKEND` is optional — when unset, per-clip face↔voice
-matching is still handled by the VL model, but cross-clip speaker
-re-identification of "unknown" speakers via voiceprint embeddings is
-skipped.
+For optional cross-clip speaker re-identification via voiceprint
+embeddings, set `TASKMEM_AUDIO_EMBED_BACKEND=your_pkg.your_module`,
+where the module exposes
+`get_audio_embeddings(wav_b64_list) -> list[list[float] | None]`.
+When unset (the default), per-clip face↔voice matching is still done
+by the VL model, but "unknown" speakers will not be re-identified
+across clips.
 
 ## Training
 
