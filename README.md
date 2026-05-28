@@ -106,8 +106,8 @@ loaded and whether the steer-adapter vLLM plugin is enabled.
 ### 1. Install
 
 ```bash
-git clone <repo-url>
-cd taskmem-inference
+git clone https://github.com/Hope-Rita/TaskMem.git
+cd TaskMem
 
 # Shared base install (required for both scenarios).
 bash setup.sh
