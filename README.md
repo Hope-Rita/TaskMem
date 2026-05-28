@@ -54,17 +54,31 @@ memorization policy itself, separating it from the downstream reasoner.
 
 ## Experimental Results
 
-| Method | Video-MME |  |  | EgoLife |  |  | EgoTempo |  |  |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-|  | Acc. | Cov. | Prec. | Acc. | Cov. | Prec. | Acc. | Cov. | Prec. |
-| EgoGPT | 44.3 | 58.7 | 75.5 | 19.2 | 28.2 | 68.1 | 15.0 | 33.5 | 44.9 |
-| HippoMM | 48.9 | 66.6 | 73.5 | 30.4 | 43.4 | 70.0 | 15.8 | 30.8 | 51.1 |
-| M3-Agent | 62.5 | 77.7 | 80.4 | 21.8 | 30.8 | 70.8 | 16.0 | 36.3 | 44.2 |
-| Gemini-1.5-Pro | 55.3 | 65.9 | 83.9 | 39.4 | 51.6 | 76.4 | 19.7 | 34.3 | 57.4 |
-| Gemini-2.5-Pro | 63.2 | 74.8 | 84.4 | 43.8 | 56.6 | 77.4 | 25.8 | 42.3 | 61.0 |
-| GPT-5.2 | 67.3 | 80.8 | 83.3 | 34.8 | 48.2 | 72.2 | **32.1** | 51.4 | 62.4 |
-| Qwen3-VL-30B-A3B | 61.6 | 74.7 | 82.5 | 38.4 | 52.4 | 73.3 | 22.3 | 38.9 | 57.2 |
-| **TaskMem (Ours)** | **67.9** | 79.3 | **85.6** | **45.4** | 56.4 | **80.5** | 27.6 | 43.7 | **63.2** |
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Method</th>
+      <th colspan="3" align="center">Video-MME</th>
+      <th colspan="3" align="center">EgoLife</th>
+      <th colspan="3" align="center">EgoTempo</th>
+    </tr>
+    <tr>
+      <th align="right">Acc.</th><th align="right">Cov.</th><th align="right">Prec.</th>
+      <th align="right">Acc.</th><th align="right">Cov.</th><th align="right">Prec.</th>
+      <th align="right">Acc.</th><th align="right">Cov.</th><th align="right">Prec.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>EgoGPT</td>           <td align="right">44.3</td><td align="right">58.7</td><td align="right">75.5</td><td align="right">19.2</td><td align="right">28.2</td><td align="right">68.1</td><td align="right">15.0</td><td align="right">33.5</td><td align="right">44.9</td></tr>
+    <tr><td>HippoMM</td>          <td align="right">48.9</td><td align="right">66.6</td><td align="right">73.5</td><td align="right">30.4</td><td align="right">43.4</td><td align="right">70.0</td><td align="right">15.8</td><td align="right">30.8</td><td align="right">51.1</td></tr>
+    <tr><td>M3-Agent</td>         <td align="right">62.5</td><td align="right">77.7</td><td align="right">80.4</td><td align="right">21.8</td><td align="right">30.8</td><td align="right">70.8</td><td align="right">16.0</td><td align="right">36.3</td><td align="right">44.2</td></tr>
+    <tr><td>Gemini-1.5-Pro</td>   <td align="right">55.3</td><td align="right">65.9</td><td align="right">83.9</td><td align="right">39.4</td><td align="right">51.6</td><td align="right">76.4</td><td align="right">19.7</td><td align="right">34.3</td><td align="right">57.4</td></tr>
+    <tr><td>Gemini-2.5-Pro</td>   <td align="right">63.2</td><td align="right">74.8</td><td align="right">84.4</td><td align="right">43.8</td><td align="right">56.6</td><td align="right">77.4</td><td align="right">25.8</td><td align="right">42.3</td><td align="right">61.0</td></tr>
+    <tr><td>GPT-5.2</td>          <td align="right">67.3</td><td align="right">80.8</td><td align="right">83.3</td><td align="right">34.8</td><td align="right">48.2</td><td align="right">72.2</td><td align="right"><b>32.1</b></td><td align="right">51.4</td><td align="right">62.4</td></tr>
+    <tr><td>Qwen3-VL-30B-A3B</td> <td align="right">61.6</td><td align="right">74.7</td><td align="right">82.5</td><td align="right">38.4</td><td align="right">52.4</td><td align="right">73.3</td><td align="right">22.3</td><td align="right">38.9</td><td align="right">57.2</td></tr>
+    <tr><td><b>TaskMem (Ours)</b></td><td align="right"><b>67.9</b></td><td align="right">79.3</td><td align="right"><b>85.6</b></td><td align="right"><b>45.4</b></td><td align="right">56.4</td><td align="right"><b>80.5</b></td><td align="right">27.6</td><td align="right">43.7</td><td align="right"><b>63.2</b></td></tr>
+  </tbody>
+</table>
 
 See the [project page](https://hope-rita.github.io/TaskMem-demo/) for the
 full table and a live demo.
