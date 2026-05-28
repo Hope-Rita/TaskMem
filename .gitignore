@@ -1,0 +1,35 @@
+video_cache/
+ckpts/
+data/
+out*
+__pycache__/
+tmp*
+temp*
+*.log
+*.out
+*.pkl
+*.mp3
+*.mp4
+face_*.jpg
+vllm/
+results
+models/
+papers
+
+# python / packaging
+*.egg-info/
+build/
+dist/
+.eggs/
+.venv/
+venv/
+env/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# local config overrides
+configs/api_config.local.json
+configs/*.local.json
